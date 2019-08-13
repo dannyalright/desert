@@ -3,6 +3,11 @@ body {
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
+.container {
+  max-width: 960px;
+  margin: 4em auto;
+}
+
 header {
   text-align: center;
 }
@@ -73,6 +78,34 @@ section#explainer li {
 }
 
 section#explainer li div {
-  height: 10em;
+  height: 20vw;
   background-color: red;
+}
+
+section#explainer li div {
+  background-size: cover;
+}
+/* Humid */
+section#explainer li:nth-child(1) div {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Cloud_forest_mount_kinabalu.jpg/629px-Cloud_forest_mount_kinabalu.jpg");
+}
+
+/* Dry subhumid */
+section#explainer li:nth-child(2) div {
+  background-image: url("https://player.slideplayer.com/12/3430656/data/images/img8.jpg");
+}
+
+/* Semi-arid */
+section#explainer li:nth-child(3) div {
+  background-image: url("https://player.slideplayer.com/12/3430656/data/images/img7.jpg");
+}
+
+/* Arid */
+section#explainer li:nth-child(4) div {
+  background-image: url("https://player.slideplayer.com/12/3430656/data/images/img0.jpg");
+}
+
+/* Hyperarid */
+section#explainer li:nth-child(5) div {
+  background-image: url("https://player.slideplayer.com/12/3430656/data/images/img5.jpg");
 }
