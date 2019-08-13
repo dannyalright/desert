@@ -60,3 +60,19 @@ header p {
   opacity: 0;
   animation: fadeIn 2s ease 1.8s forwards;
 }
+
+/* Explainer */
+section#explainer ul {
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+}
+
+section#explainer li {
+  width: 20%;
+}
+
+section#explainer li div {
+  height: 10em;
+  background-color: red;
+}
