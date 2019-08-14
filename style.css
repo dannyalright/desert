@@ -8,6 +8,16 @@ body {
   margin: 4em auto;
 }
 
+h2 {
+  font-size: 3em;
+  text-align: center;
+}
+
+p {
+  font-size: 1.5em;
+  line-height: 1.4em;
+}
+
 header {
   text-align: center;
 }
@@ -15,7 +25,6 @@ header {
 header h1 {
   text-transform: uppercase;
   font-weight: 900;
-  /* font-size: 6.5vw; */
 }
 
 @keyframes fadeIn {
@@ -32,38 +41,42 @@ header h1 span {
   opacity: 0;
   animation: fadeIn 0.3s step-end 0s forwards;
   display: block;
-  font-size: 14vh;
-  line-height: 12vh;
+  font-size: 12vh;
+  line-height: 10vh;
 }
 
-/* header h1 span:nth-child(1) { */
-/* font-size: 20vw; */
-/* } */
-
 header h1 span:nth-child(2) {
-  /* font-size: 20vw; */
   animation-delay: 0.3s;
 }
 
 header h1 span:nth-child(3) {
-  /* font-size: 15vw; */
   animation-delay: 0.6s;
 }
 
 header h1 span:nth-child(4) {
-  /* font-size: 18vw; */
   animation-delay: 0.9s;
 }
 
 header h1 span:nth-child(5) {
-  /* font-size: 24vw; */
   animation-delay: 1.2s;
 }
 
 header p {
   font-size: 4vmax;
+  line-height: 5vmax;
   opacity: 0;
   animation: fadeIn 2s ease 1.8s forwards;
+}
+
+#map,
+#explainer,
+footer {
+  opacity: 0;
+  animation: fadeIn 3.8s ease 1.8s forwards;
+}
+
+small {
+  color: grey;
 }
 
 /* Explainer */
@@ -71,20 +84,41 @@ section#explainer ul {
   list-style-type: none;
   padding-left: 0;
   display: flex;
+  flex-wrap: wrap;
 }
 
 section#explainer li {
-  width: 20%;
+  width: 100%;
 }
 
 section#explainer li div {
-  height: 20vw;
-  background-color: red;
-}
-
-section#explainer li div {
+  height: 100vw;
+  background-color: grey;
   background-size: cover;
 }
+
+@media (min-width: 480px) {
+  section#explainer li {
+    width: 50%;
+  }
+  section#explainer li div {
+    height: 50vw;
+  }
+}
+
+@media (min-width: 800px) {
+  section#explainer li {
+    width: 20%;
+  }
+  section#explainer li div {
+    height: 20vw;
+  }
+}
+
+section#explainer li p {
+  font-size: 0.75em;
+}
+
 /* Humid */
 section#explainer li:nth-child(1) div {
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Cloud_forest_mount_kinabalu.jpg/629px-Cloud_forest_mount_kinabalu.jpg");
