@@ -88,31 +88,16 @@ section#explainer ul {
 }
 
 section#explainer li {
-  width: 100%;
+  width: 20%;
 }
 
 section#explainer li div {
-  height: 100vw;
-  background-color: grey;
-  background-size: cover;
-}
-
-@media (min-width: 480px) {
-  section#explainer li {
-    width: 50%;
-  }
-  section#explainer li div {
-    height: 50vw;
-  }
-}
-
-@media (min-width: 800px) {
-  section#explainer li {
-    width: 20%;
-  }
-  section#explainer li div {
-    height: 20vw;
-  }
+  height: 20vw;
+  background-color: #eff2f3;
+  background-image: url(landscape.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-y: bottom;
 }
 
 section#explainer li p {
@@ -121,25 +106,30 @@ section#explainer li p {
 
 /* Humid */
 section#explainer li:nth-child(1) div {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Cloud_forest_mount_kinabalu.jpg/629px-Cloud_forest_mount_kinabalu.jpg");
+  /* background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Cloud_forest_mount_kinabalu.jpg/629px-Cloud_forest_mount_kinabalu.jpg"); */
+  background-image: url(landscape-humid.svg);
 }
 
 /* Dry subhumid */
 section#explainer li:nth-child(2) div {
-  background-image: url("https://player.slideplayer.com/12/3430656/data/images/img8.jpg");
+  /* background-image: url("https://player.slideplayer.com/12/3430656/data/images/img8.jpg"); */
+  background-image: url(landscape-dry-subhumid.svg);
 }
 
 /* Semi-arid */
 section#explainer li:nth-child(3) div {
-  background-image: url("https://player.slideplayer.com/12/3430656/data/images/img7.jpg");
+  /* background-image: url("https://player.slideplayer.com/12/3430656/data/images/img7.jpg"); */
+  background-image: url(landscape-semi-arid.svg);
 }
 
 /* Arid */
 section#explainer li:nth-child(4) div {
-  background-image: url("https://player.slideplayer.com/12/3430656/data/images/img0.jpg");
+  /* background-image: url("https://player.slideplayer.com/12/3430656/data/images/img0.jpg"); */
+  background-image: url(landscape-arid.svg);
 }
 
 /* Hyperarid */
 section#explainer li:nth-child(5) div {
-  background-image: url("https://player.slideplayer.com/12/3430656/data/images/img5.jpg");
+  /* background-image: url("https://player.slideplayer.com/12/3430656/data/images/img5.jpg"); */
+  background-image: url(landscape-hyperarid.svg);
 }
