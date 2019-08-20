@@ -6,6 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>This Place Will Be Desert</title>
+    <!-- Include Leaflet -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+      integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+      crossorigin=""
+    ></script>
+    <!-- Include CARTO.js -->
+    <script src="https://libs.cartocdn.com/carto.js/v4.1.11/carto.min.js"></script>
+    <!-- <link
+      href="https://carto.com/developers/carto-js/examples/maps/public/style.css"
+      rel="stylesheet"
+    /> -->
+
     <link rel="stylesheet" href="style.css" />
   </head>
 
@@ -25,8 +44,23 @@
     </header>
 
     <!-- Map -->
+    <section>
+      <div id="controls">
+        <ul>
+          <li onclick="set2000()">
+            <input type="radio" name="source" checked id="2000" />
+            <label for="2000">2000</label>
+          </li>
+          <li onclick="set2060()">
+            <input type="radio" name="source" id="2060" />
+            <label for="2060">2060</label>
+          </li>
+        </ul>
+      </div>
+      <div id="map"></div>
+    </section>
     <section id="explainer" class="container">
-      <iframe
+      <!-- <iframe
         width="100%"
         height="520"
         frameborder="0"
@@ -36,7 +70,7 @@
         mozallowfullscreen
         oallowfullscreen
         msallowfullscreen
-      ></iframe>
+      ></iframe> -->
 
       <small>
         Source: Tree Cover and Aridity Projections to 2060, US Forest Service,
@@ -109,8 +143,96 @@
         motivate people to push for the political and systemic change required
         to address the crisis. We are launching the campaign in Fall 2019 as a
         part of Climate Week. If you’re interested in participating or writing
-        about the campaign, <a href="mailto:#">get in touch</a>.
+        about the campaign,
+        <a
+          href="mailto:jbleland@gmail.com?subject=This%20Place%20Will%20Be%20Desert"
+          >get in touch</a
+        >.
       </p>
     </footer>
+
+    <script>
+      // Initiate Leaflet map
+      const cornerTopLeft = L.latLng(48.16, -124.0);
+      const cornerBottomRight = L.latLng(24.28, -66.44);
+      const bounds = L.latLngBounds(cornerTopLeft, cornerBottomRight);
+      const map = L.map("map", {
+        zoomControl: false,
+        attributionControl: false,
+        scrollWheelZoom: false,
+        boxZoom: false,
+        doubleClickZoom: false,
+        scrollWheelZoom: false,
+        dragging: false
+      }).fitBounds(bounds);
+
+      L.tileLayer(
+        "https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png",
+        {
+          maxZoom: 18
+        }
+      ).addTo(map);
+
+      // Set up Carto API
+      const client = new carto.Client({
+        apiKey: "API_KEY",
+        username: "USERNAME"
+      });
+
+      // Set intial 2000 aridity map polygons
+      const source = new carto.source.SQL("SELECT * FROM table_2000_aridity");
+      const style = new carto.style.CartoCSS(`
+          #layer {
+            polygon-fill: ramp([column_2000_aridity_zone], (#52c406, #ffd52b, #268455, #ec650a, #73AF48, #e41b04, #666666), ("Dry Subhumid", "Semi-Arid", "Humid", "Arid", null, "Hyperarid"), "=");
+          }
+        `);
+      const aridityLayer = new carto.layer.Layer(source, style);
+
+      // Talk to checkboxes
+      function set2000() {
+        source.setQuery("SELECT * FROM table_2000_aridity");
+        style.setContent(`
+          #layer {
+            polygon-fill: ramp([column_2000_aridity_zone], (#52c406, #ffd52b, #268455, #ec650a, #73AF48, #e41b04, #666666), ("Dry Subhumid", "Semi-Arid", "Humid", "Arid", null, "Hyperarid"), "=");
+          }
+        `);
+      }
+
+      function set2060() {
+        source.setQuery("SELECT * FROM table_2060_aridity");
+        style.setContent(`
+          #layer {
+            polygon-fill: ramp([column_2060_projection], (#52c406, #ffd52b, #268455, #ec650a, #73AF48, #e41b04, #666666), ("Dry Subhumid", "Semi-Arid", "Humid", "Arid", null, "Hyperarid"), "=");
+          }
+        `);
+      }
+
+      // Set state outlines
+      const outlineSource = new carto.source.SQL(
+        "SELECT * FROM ne_50m_admin_1_states"
+      );
+      const outlineStyle = new carto.style.CartoCSS(`
+        #layer {
+          polygon-fill: #826dba;
+          polygon-opacity: 0;
+        }
+        #layer::outline {
+          line-comp-op: soft-light;
+          line-width: 2;
+          line-color: #FFFFFF;
+          line-opacity: 1;
+        }
+        `);
+      const outlineLayer = new carto.layer.Layer(outlineSource, outlineStyle);
+
+      // Add aridity layer to map
+      client.addLayer(aridityLayer);
+
+      // Add outline layer to map
+      client.addLayer(outlineLayer);
+
+      // Add map to page
+      client.getLeafletLayer().addTo(map);
+    </script>
   </body>
 </html>
