@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -35,7 +34,7 @@
         <span>Place </span>
         <span>Will </span>
         <span>Be </span>
-        <span>Desert </span>
+        <span>Test</span>
       </h1>
       <p>
         See how the climate is changing where you live.<br />
@@ -175,8 +174,8 @@
 
       // Set up Carto API
       const client = new carto.Client({
-        apiKey: "API_KEY",
-        username: "USERNAME"
+        apiKey: process.env.MAP_API_KEY,
+        username: process.env.MAP_USERNAME
       });
 
       // Set intial 2000 aridity map polygons
