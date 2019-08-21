@@ -97,10 +97,47 @@ header p {
 }
 
 .map {
-  height: 100vh;
+  height: 60vh;
   background: white;
 }
 
+/* Map legend */
+ul.legend {
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+ul.legend li::before {
+  content: "";
+  display: inline-block;
+  width: 0.75em;
+  height: 0.75em;
+  border-radius: 0.75em;
+  margin-right: 1em;
+}
+
+ul.legend li:nth-child(1)::before {
+  background-color: #268455;
+}
+
+ul.legend li:nth-child(2)::before {
+  background-color: #52c406;
+}
+
+ul.legend li:nth-child(3)::before {
+  background-color: #ffd52b;
+}
+ul.legend li:nth-child(4)::before {
+  background-color: #ec650a;
+}
+ul.legend li:nth-child(5)::before {
+  background-color: #e41b04;
+}
+
+/* Else */
 #explainer,
 footer {
   opacity: 0;
