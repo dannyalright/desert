@@ -23,19 +23,19 @@ const mapTwo = L.map("mapTwo", {
   dragging: false
 }).fitBounds(bounds);
 
-L.tileLayer(
-  "https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png",
-  {
-    maxZoom: 18
-  }
-).addTo(mapOne);
+// L.tileLayer(
+//   "https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png",
+//   {
+//     maxZoom: 18
+//   }
+// ).addTo(mapOne);
 
-L.tileLayer(
-  "https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png",
-  {
-    maxZoom: 18
-  }
-).addTo(mapTwo);
+// L.tileLayer(
+//   "https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png",
+//   {
+//     maxZoom: 18
+//   }
+// ).addTo(mapTwo);
 
 // Set up Carto API
 const clientOne = new carto.Client({
@@ -88,15 +88,22 @@ const outlineStyle = new carto.style.CartoCSS(`
   }
   `);
 
+const outlineLayer = new carto.layer.Layer(outlineSource, outlineStyle);
+
 // Add aridity layer to map
 clientOne.addLayer(aridityLayer2000);
-clientOne.addLayer(aridityLayer2000);
+
+// Add outline layer to map
+clientOne.addLayer(outlineLayer);
 
 // Add map to page
 clientOne.getLeafletLayer().addTo(mapOne);
 
 // Add aridity layer to map
 clientTwo.addLayer(aridityLayer2060);
+
+// Add outline layer to map
+clientTwo.addLayer(outlineLayer);
 
 // Add map to page
 clientTwo.getLeafletLayer().addTo(mapTwo);
