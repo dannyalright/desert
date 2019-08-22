@@ -24,16 +24,17 @@
       rel="stylesheet"
     /> -->
 
+    <script src="//use.edgefonts.net/league-gothic.js"></script>
+
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <header>
+    <header class="full step">
       <h1>
         <span>This </span>
         <span>Place </span>
-        <span>Will </span>
-        <span>Be </span>
+        <span>Will Be </span>
         <span>Desert</span>
       </h1>
       <p>
@@ -42,91 +43,43 @@
       </p>
     </header>
 
-    <!-- Map -->
-    <section class="two-up">
-      <div class="half">
-        <h2>Today</h2>
-        <div id="mapOne" class="map"></div>
-      </div>
-      <div class="half">
-        <h2>2060</h2>
-        <div id="mapTwo" class="map"></div>
-      </div>
-    </section>
-
-    <!-- Map legend -->
-    <section class="container">
-      <ul class="legend">
-        <li>Humid</li>
-        <li>Dry subhumid</li>
-        <li>Semi-arid</li>
-        <li>Arid</li>
-        <li>Hyperarid</li>
-      </ul>
-    </section>
-
-    <section class="container full center">
+    <div class="full container core-text step">
       <p>The climate is changing fast.</p>
+    </div>
+    <div class="full container core-text right step">
       <p>
         While sea level rise gets the most attention, it’s actually one of the
         slowest moving impacts of climate change.
       </p>
-    </section>
-
-    <!-- Image comparison -->
-    <div class="two-up">
-      <div class="half">
-        <h3 class="center">Chicago today</h3>
-        <img
-          src="https://pixfeeds.com/images/photography/aerial/1280-511665488-chicago-skyline-aerial-view.jpg"
-          alt="Chicago, Illinois"
-        />
-        <small>Chicago sits within a dry subhumid climate today.</small>
-      </div>
-      <div class="half">
-        <h3 class="center">Chicago in 2060</h3>
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Reno_skyline.JPG/1200px-Reno_skyline.JPG"
-          alt="Reno, Nevada"
-        />
-        <small
-          >In 2060 Chicago is projected to shift to a semi-arid climate. Similar
-          to Reno, Nevada (pictured).</small
-        >
-      </div>
     </div>
-
-    <section class="container full center">
+    <div class="full container core-text center step">
       <p>
         This century, well within the lifetime of ourselves and our children,
         the climate that we live in will change.
       </p>
-    </section>
-
-    <!-- Image comparison -->
-    <div class="two-up">
-      <div class="half">
-        <h3 class="center">Houston today</h3>
-        <img
-          src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.coydavidson.com%2Fwp-content%2Fuploads%2F2012%2F06%2FHouston_Skyline_with_river_II11.jpg&f=1"
-          alt="Houston, Texas"
-        />
-        <small>Houston sits within a dry subhumid climate today.</small>
-      </div>
-      <div class="half">
-        <h3 class="center">Houston in 2060</h3>
-        <img
-          src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.beautyschoolsdirectory.com%2Fsites%2Fdefault%2Ffiles%2F2017-03%2FPhoenix%252C%2520AZ.jpg&f=1"
-          alt="Phoenix, Arizona"
-        />
-        <small
-          >In 2060 Houston is projected to shift to a semi-arid to arid climate.
-          Similar to Phoenix, Arizona (pictured).</small
-        >
-      </div>
     </div>
 
-    <section class="container full center">
+    <section class="full">
+      <div class="step">
+        <h2>Today</h2>
+        <div id="mapOne" class="map"></div>
+      </div>
+      <div class="step">
+        <h2>2060</h2>
+        <div id="mapTwo" class="map"></div>
+      </div>
+      <div class="container step">
+        <ul class="legend">
+          <li>Humid</li>
+          <li>Dry subhumid</li>
+          <li>Semi-arid</li>
+          <li>Arid</li>
+          <li>Hyperarid</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="full container core-text step">
       <p>
         Large areas of America are in danger of becoming more arid as weather
         patterns change and less rain falls every year.
@@ -134,35 +87,69 @@
     </section>
 
     <!-- Image comparison -->
-    <div class="two-up">
-      <div class="half">
-        <h3 class="center">Palm Springs today</h3>
-        <img
-          src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn-image.travelandleisure.com%2Fsites%2Fdefault%2Ffiles%2F1486059225%2FHEADER-Facebook-Palm-Springs-ps0117.jpg&f=1"
-          alt="Palm Springs, Californa"
-        />
-        <small>Palm Springs sits within an arid climate today.</small>
-      </div>
-      <div class="half">
-        <h3 class="center">Palm Springs in 2060</h3>
-        <img
-          src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fthumbs.media.smithsonianmag.com%2Ffiler%2Fac%2F7c%2Fac7ca579-669e-42c7-a27b-a7d359b38038%2Fyuma-az-downtown.jpg__1072x0_q85_upscale.jpg&f=1"
-          alt="Yuma, Arizona"
-        />
-        <small
-          >In 2060 Palm Springs is projected to shift to a hyperarid climate.
-          Similar to Yuma, Arizona (pictured).</small
-        >
+    <div class="compare step">
+      <img
+        src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.coydavidson.com%2Fwp-content%2Fuploads%2F2012%2F06%2FHouston_Skyline_with_river_II11.jpg&f=1"
+        alt="Houston, Texas"
+      />
+      <div>
+        <h3>Today</h3>
+        <p>Houston sits within a dry subhumid climate.</p>
       </div>
     </div>
+    <div class="compare step">
+      <div>
+        <h3 class="right">2060</h3>
+        <p class="right">
+          Houston is projected to shift to a semi-arid to arid climate. Similar
+          to Phoenix, Arizona (pictured).
+        </p>
+      </div>
+      <img
+        src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.beautyschoolsdirectory.com%2Fsites%2Fdefault%2Ffiles%2F2017-03%2FPhoenix%252C%2520AZ.jpg&f=1"
+        alt="Phoenix, Arizona"
+      />
+    </div>
 
-    <section class="container full center">
+    <!-- Image comparison -->
+    <div class="compare step">
+      <img
+        src="https://pixfeeds.com/images/photography/aerial/1280-511665488-chicago-skyline-aerial-view.jpg"
+        alt="Chicago, Illinois"
+      />
+      <div>
+        <h3>Today</h3>
+        <p>Chicago sits within a dry subhumid climate.</p>
+      </div>
+    </div>
+    <div class="compare step">
+      <div>
+        <h3 class="right">2060</h3>
+        <p class="right">
+          Chicago is projected to shift to a semi-arid climate. Similar to Reno,
+          Nevada (pictured).
+        </p>
+      </div>
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Reno_skyline.JPG/1200px-Reno_skyline.JPG"
+        alt="Reno, Nevada"
+      />
+    </div>
+
+    <div class="full container core-text step">
       <p>
+        Large areas of America are in danger of becoming more arid as weather
+        patterns change and less rain falls every year.
+      </p>
+    </div>
+
+    <section class="full container core-text right step">
+      <p class="right">
         The stakes have never been higher and the time to act is now.
       </p>
     </section>
 
-    <footer class="container full">
+    <footer class="full container step">
       <h2>This Place Will Be Desert</h2>
       <p>
         This Place Will Be Desert is a participatory project to bring attention
@@ -180,6 +167,32 @@
         >.
       </p>
     </footer>
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="https://unpkg.com/scrollama"></script>
+    <script>
+      // instantiate the scrollama
+      const scroller = scrollama();
+
+      // setup the instance, pass callback functions
+      scroller
+        .setup({
+          step: ".step",
+          offset: 0.75
+        })
+        .onStepEnter(response => {
+          // { element, index, direction }
+          console.log(response);
+          response.element.classList.add("visible");
+        })
+        .onStepExit(response => {
+          // { element, index, direction }
+          console.log(response);
+          // response.element.classList.remove("visible");
+        });
+
+      // setup resize event
+      window.addEventListener("resize", scroller.resize);
+    </script>
     <script src="map.js"></script>
   </body>
 </html>

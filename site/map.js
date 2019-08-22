@@ -94,7 +94,7 @@ const outlineLayer = new carto.layer.Layer(outlineSource, outlineStyle);
 clientOne.addLayer(aridityLayer2000);
 
 // Add outline layer to map
-clientOne.addLayer(outlineLayer);
+// clientOne.addLayer(outlineLayer);
 
 // Add map to page
 clientOne.getLeafletLayer().addTo(mapOne);
@@ -103,7 +103,7 @@ clientOne.getLeafletLayer().addTo(mapOne);
 clientTwo.addLayer(aridityLayer2060);
 
 // Add outline layer to map
-clientTwo.addLayer(outlineLayer);
+// clientTwo.addLayer(outlineLayer);
 
 // Add map to page
 clientTwo.getLeafletLayer().addTo(mapTwo);

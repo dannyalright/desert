@@ -2,6 +2,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   margin: 0;
+  background-color: #e9e2d6;
 }
 
 .container {
@@ -13,6 +14,10 @@ body {
   text-align: center;
 }
 
+.right {
+  text-align: right;
+}
+
 .full {
   height: 100vh;
   display: flex;
@@ -21,14 +26,12 @@ body {
   flex-direction: column; /* Column | row */
 }
 
-h2 {
-  font-size: 3em;
-  text-align: center;
-}
-
-p {
-  font-size: 1.5em;
-  line-height: 1.4em;
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-family: league-gothic, sans-serif;
 }
 
 header {
@@ -36,8 +39,6 @@ header {
 }
 
 header h1 {
-  text-transform: uppercase;
-  font-weight: 900;
 }
 
 @keyframes fadeIn {
@@ -51,14 +52,14 @@ header h1 {
 }
 
 header h1 span {
-  opacity: 0;
-  animation: fadeIn 0.3s step-end 0s forwards;
+  /* opacity: 0; */
+  /* animation: fadeIn 0.3s step-end 0s forwards; */
   display: block;
-  font-size: 16vmin;
-  line-height: 14vmin;
+  font-size: 20vmin;
+  line-height: 18vmin;
 }
 
-header h1 span:nth-child(2) {
+/* header h1 span:nth-child(2) {
   animation-delay: 0.3s;
 }
 
@@ -72,13 +73,13 @@ header h1 span:nth-child(4) {
 
 header h1 span:nth-child(5) {
   animation-delay: 1.2s;
-}
+} */
 
 header p {
   font-size: 2vmax;
   /* line-height: 5vmax; */
-  opacity: 0;
-  animation: fadeIn 2s ease 1.8s forwards;
+  /* opacity: 0; */
+  /* animation: fadeIn 2s ease 1.8s forwards; */
 }
 
 .two-up {
@@ -97,7 +98,7 @@ header p {
 }
 
 .map {
-  height: 60vh;
+  height: 40vh;
   background: white;
 }
 
@@ -140,8 +141,8 @@ ul.legend li:nth-child(5)::before {
 /* Else */
 #explainer,
 footer {
-  opacity: 0;
-  animation: fadeIn 3.8s ease 1.8s forwards;
+  /* opacity: 0; */
+  /* animation: fadeIn 3.8s ease 1.8s forwards; */
 }
 
 small {
@@ -201,4 +202,52 @@ section#explainer li:nth-child(4) div {
 section#explainer li:nth-child(5) div {
   /* background-image: url("https://player.slideplayer.com/12/3430656/data/images/img5.jpg"); */
   background-image: url(landscape-hyperarid.svg);
+}
+
+/* New stuff */
+.step {
+  /* height: 100vh; */
+  opacity: 0;
+  transform: translate(0, 1em);
+  transition: all 1s;
+}
+
+.step.visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.compare {
+  display: flex;
+}
+.compare img {
+  width: 50vw;
+  height: 50vw;
+  object-fit: cover;
+}
+
+.compare div {
+  width: 50vw;
+}
+
+/* Core text throughout page */
+.core-text {
+  font-size: 1.5rem;
+  padding: 0 6vw;
+}
+
+.core-text > * {
+  max-width: 42rem;
+}
+
+.core-text.center,
+.core-text.right {
+  display: flex;
+}
+
+.core-text.right {
+  align-items: flex-end;
+}
+.core-text.center {
+  align-items: center;
 }
